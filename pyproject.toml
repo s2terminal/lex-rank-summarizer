@@ -4,8 +4,16 @@ version = "0.1.0"
 description = ""
 authors = ["s2terminal <suzuki.sh@s2terminal.com>"]
 
+[tool.poetry.scripts]
+lex-rank-summarizer = "src.lex_rank_summarizer.main:main"
+
 [tool.poetry.dependencies]
 python = "^3.9"
+Janome = "^0.4.1"
+sumy = "^0.8.1"
+numpy = "^1.21.0"
+tinysegmenter = "^0.4"
+fire = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

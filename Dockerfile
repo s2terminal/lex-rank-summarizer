@@ -12,4 +12,4 @@ COPY pyproject.toml ./
 RUN poetry config virtualenvs.in-project true
 RUN poetry install
 
-CMD /bin/sh -c "echo 'docker dev ready'; while sleep 1000; do :; done"
+CMD poetry run lex-rank-summarizer

@@ -4,3 +4,4 @@ services:
     build: .
     volumes:
       - .:/app
+    command: /bin/sh -c "echo 'docker dev ready'; while sleep 1000; do :; done"
