@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "s2terminal-lex-rank-summarizer"
-version = "0.1.1"
+version = "0.1.2"
 description = "This is a CLI tool that uses LexRank to translate sentences in 3 lines."
 authors = ["s2terminal <suzuki.sh@s2terminal.com>"]
 license = "MIT"
