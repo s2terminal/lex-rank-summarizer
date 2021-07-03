@@ -1,4 +1,4 @@
-from src.lex_rank_summarizer.summarize import generateSummary
+from .summarize import generateSummary
 import fire
 
 def main():

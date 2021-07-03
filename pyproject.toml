@@ -1,11 +1,15 @@
 [tool.poetry]
-name = "lex-rank-summarizer"
-version = "0.1.0"
-description = ""
+name = "s2terminal-lex-rank-summarizer"
+version = "0.1.1"
+description = "This is a CLI tool that uses LexRank to translate sentences in 3 lines."
 authors = ["s2terminal <suzuki.sh@s2terminal.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/s2terminal/lex-rank-summarizer"
+repository = "https://github.com/s2terminal/lex-rank-summarizer"
 
 [tool.poetry.scripts]
-lex-rank-summarizer = "src.lex_rank_summarizer.main:main"
+lex-rank-summarizer = "s2terminal_lex_rank_summarizer.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
