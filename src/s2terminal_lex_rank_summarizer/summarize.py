@@ -13,6 +13,9 @@ import re
 from typing import NewType
 Sentence = NewType('Sentence', str)
 
+def main(text: str, sentences_count: int=3) -> str:
+    return "\n".join(generateSummary(text, sentences_count))
+
 def separateCorpus(sentences: list[Sentence]):
     char_filters: list[CharFilter] = [
         UnicodeNormalizeCharFilter(),
@@ -40,11 +43,10 @@ def summarize(parser: PlaintextParser, sentences_count: int):
     summaries: list[SentenceInfo] = summarizer(document=parser.document, sentences_count=sentences_count) # type: ignore
     return summaries
 
-def generateSummary(text: str, sentences_count: int=3):
+def generateSummary(text: str, sentences_count: int) -> list[str]:
     sentences = separateSentences(text)
     corpus = separateCorpus(sentences)
     parser = PlaintextParser.from_string(''.join(corpus), SumyTokenizer('japanese'))
     summaries = summarize(parser, sentences_count)
 
-    ret = [sentences[corpus.index(summary.__str__())] for summary in summaries]
-    return "。\n".join(ret) + "。"
+    return [sentences[corpus.index(summary.__str__())] + "。" for summary in summaries]
